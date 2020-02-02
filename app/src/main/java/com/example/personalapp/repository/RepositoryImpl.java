@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.List;
 
 import io.realm.Realm;
+import io.realm.RealmResults;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.ResponseBody;
@@ -70,6 +71,17 @@ public class RepositoryImpl implements Repository {
         mRealm.copyToRealmOrUpdate(ticket);
         mRealm.commitTransaction();
         mRealm.close();
+    }
+
+    @Override
+    public void getFavoriteTickets(CompleteCallback completeCallback) {
+        mRealm = Realm.getDefaultInstance();
+        RealmResults<Ticket> isFavorite = mRealm.where(Ticket.class).equalTo("isFavorite", true).findAllAsync();
+        isFavorite.addChangeListener(tickets -> {
+            if (completeCallback != null) {
+                completeCallback.onSuccess(tickets);
+            }
+        });
     }
 
     private void getTicketsFromWeb(CompleteCallback completeCallback) {

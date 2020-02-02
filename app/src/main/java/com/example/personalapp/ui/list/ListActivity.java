@@ -2,6 +2,9 @@ package com.example.personalapp.ui.list;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -56,4 +59,24 @@ public class ListActivity extends BaseActivity implements ListContract.View {
         intent.putExtra(DetailsActivity.TICKET_EXTRA, ticket);
         startActivity(intent);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.list_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.action_change_view:
+                mPresenter.changeList(item);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 }

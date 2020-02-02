@@ -11,4 +11,6 @@ public interface Repository {
     void setFavorite(boolean isFavorite, Ticket ticket);
 
     void setTourName(String toString, Ticket ticket);
+
+    void getFavoriteTickets(RepositoryImpl.CompleteCallback completeCallback);
 }
