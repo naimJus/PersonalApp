@@ -34,6 +34,8 @@ public interface DetailsContract {
         void setVenueName(String venueName);
 
         void setArtistPopularity(String artiestPopularity);
+
+        void setVenueCountry(String venueCountry);
     }
 
     interface Presenter {

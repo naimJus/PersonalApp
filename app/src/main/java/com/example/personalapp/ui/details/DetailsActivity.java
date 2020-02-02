@@ -37,6 +37,8 @@ public class DetailsActivity extends BaseActivity implements DetailsContract.Vie
 
     @BindView(R.id.artist_popularity)
     TextView mArtistPopularity;
+    @BindView(R.id.venue_country)
+    TextView mVenueCountry;
     @BindView(R.id.venue_name)
     TextView mVenueName;
     @BindView(R.id.venue_city)
@@ -156,9 +158,16 @@ public class DetailsActivity extends BaseActivity implements DetailsContract.Vie
     }
 
     @Override
+    public void setVenueCountry(String venueCountry) {
+        if (!TextUtils.isEmpty(venueCountry)) {
+            mVenueCountry.setText(venueCountry);
+        }
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu);
+        inflater.inflate(R.menu.details_menu, menu);
         return true;
     }
 
