@@ -35,6 +35,12 @@ class DetailsContractPresenter implements DetailsContract.Presenter {
         mView.setArtistPoster(mTicket.getArtistImage());
         mView.setEventTime(mTicket.getEventTime());
         mView.setEventDate(mTicket.getEventDate());
+        mView.setArtistPopularity(mTicket.getArtiestPopularity());
+        mView.setVenueName(mTicket.getVenueName());
+        mView.setVenueCity(mTicket.getVenueCity());
+        mView.setVenueZipCode(mTicket.getVenueZipcode());
+        mView.setVenueStreet(mTicket.getVenueStreet());
+        mView.setVenueBuildingNumber(mTicket.getVenuebuildingNumber());
     }
 
     @Override

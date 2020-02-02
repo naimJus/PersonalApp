@@ -22,6 +22,18 @@ public interface DetailsContract {
         void setEventDate(String eventDate);
 
         void setFavoriteIcon(MenuItem menuItem, @DrawableRes int imgRes);
+
+        void setVenueBuildingNumber(String venuebuildingNumber);
+
+        void setVenueStreet(String venueStreet);
+
+        void setVenueZipCode(String venueZipcode);
+
+        void setVenueCity(String venueCity);
+
+        void setVenueName(String venueName);
+
+        void setArtistPopularity(String artiestPopularity);
     }
 
     interface Presenter {

@@ -35,6 +35,20 @@ public class DetailsActivity extends BaseActivity implements DetailsContract.Vie
     @BindView(R.id.event_time_text_view)
     TextView mEventTimeTextView;
 
+    @BindView(R.id.artist_popularity)
+    TextView mArtistPopularity;
+    @BindView(R.id.venue_name)
+    TextView mVenueName;
+    @BindView(R.id.venue_city)
+    TextView mVenueCity;
+    @BindView(R.id.venue_zipcode)
+    TextView mVenueZipCode;
+    @BindView(R.id.venue_street)
+    TextView mVenueStreet;
+    @BindView(R.id.venue_building_number)
+    TextView mVenueBuildingNumber;
+
+
     @Inject
     DetailsContract.Presenter mPresenter;
 
@@ -97,6 +111,48 @@ public class DetailsActivity extends BaseActivity implements DetailsContract.Vie
     @Override
     public void setFavoriteIcon(MenuItem menuItem, int imgRes) {
         menuItem.setIcon(imgRes);
+    }
+
+    @Override
+    public void setVenueBuildingNumber(String venuebuildingNumber) {
+        if (!TextUtils.isEmpty(venuebuildingNumber)) {
+            mVenueBuildingNumber.setText(venuebuildingNumber);
+        }
+    }
+
+    @Override
+    public void setVenueStreet(String venueStreet) {
+        if (!TextUtils.isEmpty(venueStreet)) {
+            mVenueStreet.setText(venueStreet);
+        }
+    }
+
+    @Override
+    public void setVenueZipCode(String venueZipcode) {
+        if (!TextUtils.isEmpty(venueZipcode)) {
+            mVenueZipCode.setText(venueZipcode);
+        }
+    }
+
+    @Override
+    public void setVenueCity(String venueCity) {
+        if (!TextUtils.isEmpty(venueCity)) {
+            mVenueCity.setText(venueCity);
+        }
+    }
+
+    @Override
+    public void setVenueName(String venueName) {
+        if (!TextUtils.isEmpty(venueName)) {
+            mVenueName.setText(venueName);
+        }
+    }
+
+    @Override
+    public void setArtistPopularity(String artiestPopularity) {
+        if (!TextUtils.isEmpty(artiestPopularity)) {
+            mArtistPopularity.setText(artiestPopularity);
+        }
     }
 
     @Override

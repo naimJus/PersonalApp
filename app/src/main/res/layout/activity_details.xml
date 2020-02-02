@@ -59,4 +59,59 @@
         </LinearLayout>
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/artist_popularity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_normal"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_large" />
+
+    <TextView
+        android:id="@+id/venue_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_normal"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_large" />
+
+    <TextView
+        android:id="@+id/venue_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_normal"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_large" />
+
+    <TextView
+        android:id="@+id/venue_country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_normal"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_large" />
+
+    <TextView
+        android:id="@+id/venue_zipcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_normal"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_large" />
+
+    <TextView
+        android:id="@+id/venue_street"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_normal"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_large" />
+
+    <TextView
+        android:id="@+id/venue_building_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_normal"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_large" />
 </LinearLayout>
