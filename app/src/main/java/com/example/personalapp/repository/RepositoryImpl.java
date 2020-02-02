@@ -47,6 +47,21 @@ public class RepositoryImpl implements Repository {
         });
     }
 
+    @Override
+    public void setFavorite(boolean isFavorite, int eventId) {
+        //TODO Implement
+    }
+
+    @Override
+    public void setFavorite(boolean isFavorite, Ticket ticket) {
+        mRealm = Realm.getDefaultInstance();
+        mRealm.beginTransaction();
+        ticket.setFavorite(isFavorite);
+        mRealm.copyToRealmOrUpdate(ticket);
+        mRealm.commitTransaction();
+        mRealm.close();
+    }
+
     private void getTicketsFromWeb(CompleteCallback completeCallback) {
         Request request = new Request.Builder()
                 .url("https://www.rang1tickets.nl/ost/apptest/")

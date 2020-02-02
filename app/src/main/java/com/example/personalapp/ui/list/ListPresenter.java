@@ -25,6 +25,7 @@ class ListPresenter implements ListContract.Presenter, TicketAdapter.ItemSelecte
             public void onSuccess(List<Ticket> list) {
                 mView.hideProgressBar();
                 mTicketAdapter.setDataSet(list);
+                mTicketAdapter.notifyDataSetChanged();
                 mTicketAdapter.setItemSelectedCallback(ListPresenter.this);
                 mView.setAdapter(mTicketAdapter);
             }
