@@ -3,11 +3,11 @@ package com.example.personalapp.ui.list;
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.personalapp.R;
 import com.example.personalapp.data.Ticket;
+import com.example.personalapp.ui.BaseActivity;
 import com.example.personalapp.ui.BaseApplication;
 import com.example.personalapp.ui.details.DetailsActivity;
 
@@ -16,7 +16,7 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ListActivity extends AppCompatActivity implements ListContract.View {
+public class ListActivity extends BaseActivity implements ListContract.View {
 
     @BindView(R.id.ticket_recycler_view)
     RecyclerView mRecyclerView;
@@ -47,7 +47,7 @@ public class ListActivity extends AppCompatActivity implements ListContract.View
 
     @Override
     public void setAdapter(TicketAdapter ticketAdapter) {
-        mRecyclerView.setAdapter(ticketAdapter);
+        runOnUiThread(() -> mRecyclerView.setAdapter(ticketAdapter));
     }
 
     @Override

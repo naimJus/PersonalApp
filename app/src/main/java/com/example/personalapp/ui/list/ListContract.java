@@ -1,10 +1,11 @@
 package com.example.personalapp.ui.list;
 
 import com.example.personalapp.data.Ticket;
+import com.example.personalapp.ui.BaseView;
 
 public interface ListContract {
 
-    interface View {
+    interface View extends BaseView {
 
         void setAdapter(TicketAdapter ticketAdapter);
 

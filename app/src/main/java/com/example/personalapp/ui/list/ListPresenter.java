@@ -19,9 +19,11 @@ class ListPresenter implements ListContract.Presenter, TicketAdapter.ItemSelecte
 
     @Override
     public void subscribe() {
+        mView.showProgressBar(false);
         mRepository.getTickets(new RepositoryImpl.CompleteCallback() {
             @Override
             public void onSuccess(List<Ticket> list) {
+                mView.hideProgressBar();
                 mTicketAdapter.setDataSet(list);
                 mTicketAdapter.setItemSelectedCallback(ListPresenter.this);
                 mView.setAdapter(mTicketAdapter);
@@ -29,7 +31,8 @@ class ListPresenter implements ListContract.Presenter, TicketAdapter.ItemSelecte
 
             @Override
             public void onError(Throwable throwable) {
-
+                mView.hideProgressBar();
+                mView.showDefaultError();
             }
         });
 
