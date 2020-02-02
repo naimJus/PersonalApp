@@ -8,8 +8,8 @@
     tools:context=".ui.details.DetailsActivity">
 
 
-    <TextView
-        android:id="@+id/tour_name_text_view"
+    <EditText
+        android:id="@+id/tour_name_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/spacing_normal"

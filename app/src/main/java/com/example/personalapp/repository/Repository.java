@@ -9,4 +9,6 @@ public interface Repository {
     void setFavorite(boolean isFavorite, int eventId);
 
     void setFavorite(boolean isFavorite, Ticket ticket);
+
+    void setTourName(String toString, Ticket ticket);
 }

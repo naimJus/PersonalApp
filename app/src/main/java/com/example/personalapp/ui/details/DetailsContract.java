@@ -30,5 +30,7 @@ public interface DetailsContract {
         void manageFavorite(MenuItem menuItem);
 
         void subscribeMenu(MenuItem menuItem);
+
+        void tourNameChanged(CharSequence tourName);
     }
 }

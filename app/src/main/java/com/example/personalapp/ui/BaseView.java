@@ -1,6 +1,7 @@
 package com.example.personalapp.ui;
 
 import android.content.DialogInterface;
+import android.view.View;
 
 public interface BaseView {
     void showProgressBar(boolean isCancelable);
@@ -14,4 +15,6 @@ public interface BaseView {
                               DialogInterface.OnClickListener clickListener);
 
     void showInfoDialog(Integer title, Integer message, boolean cancelable, Integer buttonTxt, DialogInterface.OnDismissListener onDismissListener);
+
+    void hideKeyboard(View view);
 }

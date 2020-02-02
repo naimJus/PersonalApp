@@ -39,6 +39,7 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.CustomView
     public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
         Ticket ticket = mDataSet.get(position);
         holder.mEventImageDrawee.setImageURI(Uri.parse(ticket.getArtistImage()));
+        holder.mTourNameTextView.setText(ticket.getArtistTourName());
         holder.mEventNameTextView.setText(ticket.getArtistName());
         holder.mEventDateTextView.setText(ticket.getEventDate());
     }
@@ -62,6 +63,8 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.CustomView
     public class CustomViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.event_image_view)
         SimpleDraweeView mEventImageDrawee;
+        @BindView(R.id.tour_name_text_view)
+        TextView mTourNameTextView;
         @BindView(R.id.event_name_text_view)
         TextView mEventNameTextView;
         @BindView(R.id.event_date_text_view)

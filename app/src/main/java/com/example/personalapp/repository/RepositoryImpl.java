@@ -62,6 +62,16 @@ public class RepositoryImpl implements Repository {
         mRealm.close();
     }
 
+    @Override
+    public void setTourName(String tourName, Ticket ticket) {
+        mRealm = Realm.getDefaultInstance();
+        mRealm.beginTransaction();
+        ticket.setArtistTourName(tourName);
+        mRealm.copyToRealmOrUpdate(ticket);
+        mRealm.commitTransaction();
+        mRealm.close();
+    }
+
     private void getTicketsFromWeb(CompleteCallback completeCallback) {
         Request request = new Request.Builder()
                 .url("https://www.rang1tickets.nl/ost/apptest/")

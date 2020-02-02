@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.personalapp.R;
@@ -17,6 +18,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnTextChanged;
 
 public class DetailsActivity extends BaseActivity implements DetailsContract.View {
 
@@ -24,8 +26,8 @@ public class DetailsActivity extends BaseActivity implements DetailsContract.Vie
 
     @BindView(R.id.poster_drawee)
     SimpleDraweeView mPosterDraweeView;
-    @BindView(R.id.tour_name_text_view)
-    TextView mTourNameTextView;
+    @BindView(R.id.tour_name_edit_text)
+    EditText mTourNameEditText;
     @BindView(R.id.artist_name_text)
     TextView mArtistNameTextView;
     @BindView(R.id.event_date_text_view)
@@ -60,7 +62,7 @@ public class DetailsActivity extends BaseActivity implements DetailsContract.Vie
     @Override
     public void setTourName(String artistTourName) {
         if (!TextUtils.isEmpty(artistTourName)) {
-            mTourNameTextView.setText(artistTourName);
+            mTourNameEditText.setText(artistTourName);
         }
     }
 
@@ -121,5 +123,10 @@ public class DetailsActivity extends BaseActivity implements DetailsContract.Vie
         MenuItem menuItem = menu.findItem(R.id.action_favorite);
         mPresenter.subscribeMenu(menuItem);
         return super.onPrepareOptionsMenu(menu);
+    }
+
+    @OnTextChanged(R.id.tour_name_edit_text)
+    void onTextChanged(CharSequence text) {
+        mPresenter.tourNameChanged(text);
     }
 }

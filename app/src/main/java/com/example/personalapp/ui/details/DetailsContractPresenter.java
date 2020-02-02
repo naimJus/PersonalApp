@@ -51,4 +51,9 @@ class DetailsContractPresenter implements DetailsContract.Presenter {
             mView.setFavoriteIcon(menuItem, R.drawable.ic_favorite_false);
         }
     }
+
+    @Override
+    public void tourNameChanged(CharSequence tourName) {
+        mRepository.setTourName(tourName.toString(), mTicket);
+    }
 }
