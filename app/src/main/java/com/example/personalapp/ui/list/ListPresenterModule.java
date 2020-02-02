@@ -7,11 +7,17 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class ListPresenterModule {
+class ListPresenterModule {
 
     @PerActivity
     @Provides
-    public ListContract.Presenter providePresenter(Repository repository) {
-        return new ListPresenter(repository);
+    TicketAdapter provideTicketAdapter() {
+        return new TicketAdapter();
+    }
+
+    @PerActivity
+    @Provides
+    ListContract.Presenter providePresenter(ListContract.View view, Repository repository, TicketAdapter ticketAdapter) {
+        return new ListPresenter(view, repository, ticketAdapter);
     }
 }

@@ -3,6 +3,7 @@ package com.example.personalapp.ui;
 import android.app.Application;
 
 import com.example.personalapp.di.AppComponent;
+import com.example.personalapp.di.AppModule;
 import com.example.personalapp.di.DaggerAppComponent;
 
 import io.realm.Realm;
@@ -35,7 +36,10 @@ public class BaseApplication extends Application {
     }
 
     private void initDagger() {
-        sComponent = DaggerAppComponent.builder().build();
+        sComponent = DaggerAppComponent
+                .builder()
+                .appModule(new AppModule(this))
+                .build();
         sComponent.inject(this);
     }
 
