@@ -13,6 +13,7 @@ public interface ListContract {
 
         void openDetailsActivity(Ticket ticket);
 
+        void notifyDatasetChanged(TicketAdapter ticketAdapter);
     }
 
     interface Presenter {

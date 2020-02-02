@@ -61,6 +61,11 @@ public class ListActivity extends BaseActivity implements ListContract.View {
     }
 
     @Override
+    public void notifyDatasetChanged(TicketAdapter ticketAdapter) {
+        runOnUiThread(ticketAdapter::notifyDataSetChanged);
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.list_menu, menu);

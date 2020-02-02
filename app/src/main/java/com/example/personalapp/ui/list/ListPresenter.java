@@ -32,7 +32,7 @@ class ListPresenter implements ListContract.Presenter, TicketAdapter.ItemSelecte
             public void onSuccess(List<Ticket> list) {
                 mView.hideProgressBar();
                 mTicketAdapter.setDataSet(list);
-                mTicketAdapter.notifyDataSetChanged();
+                mView.notifyDatasetChanged(mTicketAdapter);
                 mTicketAdapter.setItemSelectedCallback(ListPresenter.this);
             }
 
@@ -53,7 +53,7 @@ class ListPresenter implements ListContract.Presenter, TicketAdapter.ItemSelecte
             public void onSuccess(List<Ticket> list) {
                 mView.hideProgressBar();
                 mTicketAdapter.setDataSet(list);
-                mTicketAdapter.notifyDataSetChanged();
+                mView.notifyDatasetChanged(mTicketAdapter);
             }
 
             @Override
