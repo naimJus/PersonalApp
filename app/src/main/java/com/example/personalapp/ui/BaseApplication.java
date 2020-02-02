@@ -5,6 +5,7 @@ import android.app.Application;
 import com.example.personalapp.di.AppComponent;
 import com.example.personalapp.di.AppModule;
 import com.example.personalapp.di.DaggerAppComponent;
+import com.facebook.drawee.backends.pipeline.Fresco;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
@@ -20,6 +21,7 @@ public class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
+        Fresco.initialize(this);
         initDb();
 
         initDagger();

@@ -7,21 +7,37 @@
     android:orientation="horizontal">
 
     <com.facebook.drawee.view.SimpleDraweeView
-        android:id="@+id/resultImageSimpleDrawee"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:id="@+id/event_image_view"
+        android:layout_width="@dimen/ic_size"
+        android:layout_height="@dimen/ic_size"
         android:layout_margin="@dimen/spacing_normal"
-        fresco:failureImage="@drawable/ic_no_image"
-        fresco:placeholderImage="@drawable/ic_no_image"
+        fresco:failureImage="@drawable/ic_avatar"
+        fresco:placeholderImage="@drawable/ic_avatar"
         fresco:roundAsCircle="true" />
 
-    <TextView
-        android:id="@+id/resultNameTextView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing_normal"
-        android:layout_marginEnd="@dimen/spacing_normal"
-        android:layout_marginBottom="@dimen/spacing_normal"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/text_normal" />
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/event_name_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_normal"
+            android:layout_marginEnd="@dimen/spacing_normal"
+            android:layout_marginBottom="@dimen/spacing_normal"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_normal" />
+
+        <TextView
+            android:id="@+id/event_date_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_normal"
+            android:layout_marginEnd="@dimen/spacing_normal"
+            android:layout_marginBottom="@dimen/spacing_normal"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_normal" />
+    </LinearLayout>
 </LinearLayout>
