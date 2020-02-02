@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Personal App</string>
+    <string name="title_something_wrong">Something went wrong</string>
+    <string name="msg_something_wrong">Something went wrong please try again later</string>
+    <string name="loading">Loading ...</string>
+    <string name="manage_favorite">Add to / Remove from favorites</string>
+    <string name="show_favorites">Show Favorites</string>
+    <string name="show_all">Show all</string>
 </resources>

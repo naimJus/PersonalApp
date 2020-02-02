@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- default spacing between two views -->
+    <dimen name="spacing_largest">40dp</dimen>
+    <dimen name="spacing_larger">32dp</dimen>
+    <dimen name="spacing_large">24dp</dimen>
+    <dimen name="spacing_normal_mid">20dp</dimen>
+    <dimen name="spacing_normal">16dp</dimen>
+    <dimen name="spacing_small">10dp</dimen>
+    <dimen name="spacing_smaller">8dp</dimen>
+    <dimen name="spacing_smallest">6dp</dimen>
+    <dimen name="spacing_tiny">4dp</dimen>
+    <dimen name="spacing_tiniest">2dp</dimen>
+
+    <!--  font sizes  -->
+    <dimen name="text_smaller">10sp</dimen>
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="text_normal">14sp</dimen>
+    <dimen name="text_large">16sp</dimen>
+    <dimen name="text_larger">20sp</dimen>
+    <dimen name="text_largest">24sp</dimen>
+    <dimen name="ic_size">80dp</dimen>
+
+</resources>
